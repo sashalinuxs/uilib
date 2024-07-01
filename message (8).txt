@@ -1,0 +1,136 @@
+local library = loadstring(game: HttpGet("https://raw.githubusercontent.com/Efial/Chi/main/Scripts/MainUI.lua", true))()
+
+local Tabs = {
+Legit = library:addTab("Legit");
+Visuals = library:addTab("Visuals");
+Settings = library:addTab("Settings");
+}
+
+local Aimbot = Tabs.Legit:createGroup('left', 'Aimbot')
+local Visuals = Tabs.Visuals:createGroup('left', 'Player Visuals')
+local fov_circle_tab = Tabs.Legit:createGroup('right', 'Fov Circle')
+
+    --// Aimbot
+    do
+        Aimbot:addToggle({text = "AimLock", default = false, flag = "", callback = function(Value)
+        end}):addKeybind({text = "aim bind", type = "hold", key = Enum.UserInputType.MouseButton2, flag = "", callback = function(Value)
+        end})
+
+        Aimbot:addSlider({text = "smoothness:", min = 0, max = 100, suffix = "%", float = 1, default = 50, flag = "", callback = function(Value)
+        end})
+
+        Aimbot:addSlider({text = "prediction X", min = 1000, max = 5000, suffix = "%", float = 1, default = 0, flag = "", callback = function(Value)
+        end})
+
+        Aimbot:addSlider({text = "Prediction Y", min = 1000, max = 5000, suffix = "%", float = 1, default = 0, flag = "", callback = function(Value)
+        end})
+
+        Aimbot:addToggle({text = "auto prediction", default = true, flag = "", callback = function(Value)
+        end})
+
+        Aimbot:addToggle({text = "visible check", default = false, flag = "", callback = function(Value)
+        end})
+
+        Aimbot:addToggle({text = "Crew check", default = false, flag = "", callback = function(Value)
+        end})
+
+        Aimbot:addToggle({text = "highlight target", default = false, flag = "", callback = function(Value)
+        end}):addColorpicker({text = "highlight target color", ontop = true, flag = "", color = Color3.fromRGB(255, 50, 50), callback = function(Value)
+        end})
+
+        Aimbot:addToggle({text = "snaplines", default = false, flag = "", callback = function(Value)
+        end}):addColorpicker({text = "snaplines color", ontop = true, flag = "", color = Color3.fromRGB(255, 255, 255), callback = function(Value)
+        end})
+
+        Aimbot:addList({text = "Hitpart:", multiselect = false, values = {'Head', 'UpperTorso', 'HumanoidRootPart'}, flag = "", callback = function(Value)
+        end})
+    end
+
+      ---
+        do
+        Combat:addToggle({text = "AimLock", default = false, flag = "", callback = function(Value)
+        end}):addKeybind({text = "aim bind", type = "hold", key = Enum.UserInputType.MouseButton2, flag = "", callback = function(Value)
+        end})
+
+        Combat:addSlider({text = "smoothness:", min = 0, max = 100, suffix = "%", float = 1, default = 50, flag = "", callback = function(Value)
+        end})
+
+        Combat:addSlider({text = "prediction X", min = 1000, max = 5000, suffix = "%", float = 1, default = 0, flag = "", callback = function(Value)
+        end})
+
+        Combat:addSlider({text = "Prediction Y", min = 1000, max = 5000, suffix = "%", float = 1, default = 0, flag = "", callback = function(Value)
+        end})
+
+        Combat:addToggle({text = "auto prediction", default = true, flag = "", callback = function(Value)
+        end})
+
+        Combat:addToggle({text = "visible check", default = false, flag = "", callback = function(Value)
+        end})
+
+        Combat:addToggle({text = "Crew check", default = false, flag = "", callback = function(Value)
+        end})
+
+        Combat:addToggle({text = "highlight target", default = false, flag = "", callback = function(Value)
+        end}):addColorpicker({text = "highlight target color", ontop = true, flag = "", color = Color3.fromRGB(255, 50, 50), callback = function(Value)
+        end})
+
+        Combat:addToggle({text = "snaplines", default = false, flag = "", callback = function(Value)
+        end}):addColorpicker({text = "snaplines color", ontop = true, flag = "", color = Color3.fromRGB(255, 255, 255), callback = function(Value)
+        end})
+
+        Combat:addList({text = "Hitpart:", multiselect = false, values = {'Head', 'UpperTorso', 'HumanoidRootPart'}, flag = "", callback = function(Value)
+        end})
+    end
+
+        --// aim Visuals
+        do
+
+        Visuals:addToggle({text = "Auto Shoot Enemy", default = false, flag = "", callback = function(Value)
+        end})
+
+        Visuals:addToggle({text = "Bone Override", default = false, flag = "", callback = function(Value)
+        end})
+
+        Visuals:addToggle({text = "Aim Visuals", default = false, flag = "", callback = function(Value)
+        end}):addColorpicker({text = "Aim Visuals color", ontop = true, flag = "", color = Color3.fromRGB(255, 255, 255), callback = function(Value)
+        end})
+
+        Visuals:addToggle({text = "Simulate Projectiles", default = false, flag = "", callback = function(Value)
+        end})
+
+        Visuals:addToggle({text = "Aim Marker", default = false, flag = "", callback = function(Value)
+        end}):addColorpicker({text = "Aim marker color", ontop = true, flag = "", color = Color3.fromRGB(255, 255, 255), callback = function(Value)
+        end})
+
+        Visuals:addToggle({text = "Crosshair", default = false, flag = "", callback = function(Value)
+        end}):addColorpicker({text = "Crosshair color", ontop = true, flag = "", color = Color3.fromRGB(255, 255, 255), callback = function(Value)
+        end})
+
+        Visuals:addSlider({text = "Crosshair Size:", min = 0, max = 100, suffix = "%", float = 1, default = 100, flag = "", callback = function(Value)
+        end})
+
+        Visuals:addSlider({text = "Crosshair Radius:", min = 0, max = 60, suffix = "%", float = 1, default = 10, flag = "", callback = function(Value)
+        end})
+
+        Visuals:addList({text = "Crosshair Shape:", multiselect = false, values = {'Cross', 'triangle', 'square'}, flag = "", callback = function(Value)
+        end})
+    end
+
+
+    local uisettings = Tabs.Settings:createGroup('left', 'Menu')
+
+    --// UI Settings
+    do
+        uisettings:addToggle({text = "menu bind", default = true, flag = "menubind_toggle", callback = function(Value)
+        end}):addKeybind({text = "menu bind", type = "toggle", key = Enum.KeyCode.End, flag = "menubindkeybind_toggle", callback = function(Value)
+            Library.keybind = Value
+        end})
+
+        uisettings:addSlider({text = "fps cap:", min = 60, max = 999, suffix = "fps", float = 1, default = 999, flag = "fpscap_slider", callback = function(Value)
+            setfpscap(Value)
+        end})
+
+        uisettings:addButton({text = "Discord Invite", callback = function(Value)
+            Library:Notify("discord.gg/DcvHjuSjMv", 20)
+        end})
+        end
